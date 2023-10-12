@@ -16,6 +16,7 @@ public class TiltScreen : MonoBehaviour
 
     Quaternion GyroToUnity(Quaternion gyroInput)
     {
-        return new Quaternion(0, 0, gyroInput.z, gyroInput.w); //this returns a quaternion with the raw axis inputs of the phone's gyro rotations
+        var eulerRotation = gyroInput.eulerAngles;
+        return Quaternion.Euler(0, 0, eulerRotation.z - 90);
     }
 }
