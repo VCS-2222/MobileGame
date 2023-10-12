@@ -9,7 +9,7 @@ public class TiltScreen : MonoBehaviour
         Input.gyro.enabled = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         this.transform.rotation = GyroToUnity(Input.gyro.attitude);
     }
